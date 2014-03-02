@@ -22,7 +22,7 @@ public abstract class FileOps {
 		
 		while(line != null) {
 			sb.append(line);
-			sb.append(System.lineSeparator());
+			sb.append("\r");
 			line = br.readLine();
 		}
 		

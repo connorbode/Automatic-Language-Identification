@@ -16,5 +16,11 @@ The system..
 
 - considers all words as lower case
 - considers if words are at the beginning or end of a sentence
-- does not consider other punctuation such as apostrophes or commas
+- treats newlines as periods
+- treats question marks and exclamation marks as periods
+- concatenates the two strings on either side of a single dash (e.g. "grown-ups" becomes "grownups")
+- treats double-dashes as periods
+- does not consider quotation marks or apostrophes
+- treats colons as periods
+- treats commas as breaks (e.g. "A, B C" will create a bigram (B,C) but not (A,B))
 - assumes input will be devoid of diacritics

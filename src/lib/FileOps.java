@@ -9,7 +9,7 @@ import java.io.IOException;
 public abstract class FileOps {
 
 	/**
-	 * Reads text from a file
+	 * Reads text from a file. Heavily based on code found at http://stackoverflow.com/questions/4716503/best-way-to-read-a-text-file
 	 * @param file the file
 	 * @return the String of text in the file
 	 */

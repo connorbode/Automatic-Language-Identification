@@ -9,7 +9,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		try {
-			System.out.print(Tokenizer.tokenize(FileOps.readTextFromFile(new File("files/english.txt"))));
+			Tokenizer.tokenize(FileOps.readTextFromFile(new File("files/english.txt")));
 		}
 		
 		catch(Exception e) {

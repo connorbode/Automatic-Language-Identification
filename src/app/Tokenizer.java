@@ -1,8 +1,6 @@
 package app;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public abstract class Tokenizer {
 	
@@ -32,7 +30,7 @@ public abstract class Tokenizer {
 		METHODS
    	   =============================================== */
 
-	public static String tokenize(String string)
+	public static ArrayList<String> tokenize(String string)
 		throws CharacterSetException {
 		
 		// lowercase the string
@@ -79,14 +77,15 @@ public abstract class Tokenizer {
 			}
 		}
 		
-		// print
-		for(int i = 0; i < splitList.size()-1; i++) {
-			
-			System.out.println(splitList.get(i));
+		// add a period at the beginning
+		splitList.add(0, ".");
+		
+		// if there isn't a period at the end, add a period
+		int lastElem = splitList.size() - 1;
+		if(!splitList.get(lastElem).equals(".")) {
+			splitList.add(lastElem, ".");
 		}
 		
-		String formatted = ". " + string;
-		
-		return formatted;
+		return splitList;
 	}
 }

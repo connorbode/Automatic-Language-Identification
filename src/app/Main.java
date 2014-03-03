@@ -9,7 +9,8 @@ public class Main {
 	public static void main(String[] args) {
 		
 		try {
-			Tokenizer.tokenize(FileOps.readTextFromFile(new File("files/english.txt")));
+			Bigram bigram = new Bigram(new File("files/english.txt"));
+			System.out.println();
 		}
 		
 		catch(Exception e) {

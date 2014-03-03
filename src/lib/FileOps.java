@@ -26,6 +26,8 @@ public abstract class FileOps {
 			line = br.readLine();
 		}
 		
+		br.close();
+		
 		return sb.toString();
 	}
 }

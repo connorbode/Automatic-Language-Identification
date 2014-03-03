@@ -11,7 +11,7 @@ public abstract class Tokenizer {
 	   =============================================== */
 	
 	private static String[] PERIOD_EQUIVALENT = {
-		".", "--", "!", "?", System.getProperty("line.separator")
+		".", "--", "!", "?", System.getProperty("line.separator") + System.getProperty("line.separator")
 	};
 	
 	private static String[] REMOVABLE = {
@@ -23,7 +23,7 @@ public abstract class Tokenizer {
 	};
 	
 	private static String[] SPACE_EQUIVALENT = {
-		"\r"
+		System.getProperty("line.separator")
 	};
 	
 	
@@ -34,8 +34,6 @@ public abstract class Tokenizer {
 
 	public static String tokenize(String string)
 		throws CharacterSetException {
-		
-		String formatted = ". ";
 		
 		// lowercase the string
 		string = string.toLowerCase();
@@ -66,16 +64,28 @@ public abstract class Tokenizer {
 		// create an arraylist from the split
 		ArrayList<String> splitList = new ArrayList<String>();
 		for(int i = 0; i < split.length; i++) {
-			if(split[i] != "") {
+			if(!split[i].equals("")) {
 				splitList.add(split[i]);
-				System.out.println(split[i]);
 			}
 		}
-
-		System.out.println(splitList.get(3));
-		System.out.println(splitList.get(3) == "");
 		
-		formatted = ". " + string;
+		// remove sequential periods
+		for(int i = 0; i < splitList.size()-1; i++) {
+			if(splitList.get(i).equals(".")) {
+				if(splitList.get(i+1).equals(".")) {
+					splitList.remove(i);
+					i = i-1;
+				}
+			}
+		}
+		
+		// print
+		for(int i = 0; i < splitList.size()-1; i++) {
+			
+			System.out.println(splitList.get(i));
+		}
+		
+		String formatted = ". " + string;
 		
 		return formatted;
 	}

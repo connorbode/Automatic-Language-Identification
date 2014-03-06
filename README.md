@@ -1,7 +1,7 @@
 Automatic-Language-Identification
 =================================
 
-Parses text and determines the language of the text based on bigrams.
+Parses text and determines the language of the text based on character bigrams.
 
 ## Project Description
 
@@ -14,13 +14,7 @@ This Java project was done for my Concordia Artificial Intelligence course with 
 
 The system..
 
-- considers all words as lower case
-- considers if words are at the beginning or end of a sentence
-- treats newlines as periods
-- treats question marks and exclamation marks as periods
-- concatenates the two strings on either side of a single dash (e.g. "grown-ups" becomes "grownups")
-- treats double-dashes as periods
-- does not consider quotation marks or apostrophes
-- treats colons as periods
-- treats commas as breaks (e.g. "A, B C" will create a bigram (B,C) but not (A,B))
-- assumes input will be devoid of diacritics
+- ignores punctuation
+- considers all letters lower case
+- removes diacritics
+- is based on 2-character sequences

@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Hashtable;
 
 public class Bigram {
 	
@@ -15,7 +14,7 @@ public class Bigram {
    	   =============================================== */
 	
 	// The bigram matrix
-	private Hashtable<String, Hashtable<String, Double>> bigrams = new Hashtable<String, Hashtable<String, Double>>();
+	private Double[][] bigrams = new Double[26][26];
 	
 	
 	/* ===============================================
@@ -36,11 +35,24 @@ public class Bigram {
 		String fileContents = FileOps.readTextFromFile(file);
 		
 		// Parse the file contents
-		ArrayList<String> tokens = Tokenizer.tokenize(fileContents);
+		ArrayList<Character> tokens = Tokenizer.tokenize(fileContents);
+		
+		// Set up the bigram
+		for(int i = 0; i < bigrams.length; i++) {
+			for(int j = 0; j < bigrams[i].length; j++) {
+				bigrams[i][j] = 0.0;
+			}
+		}
 		
 		// Build the Bigram
 		for(int i = 0; i < tokens.size()-1; i++) {
-			incrementValue(tokens.get(i), tokens.get(i+1));
+			
+			char token1 = tokens.get(i);
+			char token2 = tokens.get(i+1);
+			
+			// Increment the bigram matrix if neither token is a space
+			if(token1 != ' ' && token2 != ' ') 
+				incrementValue(tokens.get(i), tokens.get(i+1));
 		}
 	}
 	
@@ -62,23 +74,13 @@ public class Bigram {
 	
 	/**
 	 * Retrieves the value of a given bigram
-	 * @param first the first word in the bigram
-	 * @param second the second word in the bigram
-	 * @return null if the bigram does not exist; otherwise the probability of the bigram occurring.
+	 * @param first the first character in the bigram
+	 * @param second the second character in the bigram
+	 * @return the probability of the bigram occurring
 	 */
-	public Double getValue(String first, String second) {
+	public Double getValue(char first, char second) {
 		
-		Double returnVal = null;
-		
-		// Try to get the second dimension
-		Hashtable<String, Double> secondDimension = bigrams.get(first);
-		
-		// Try to get the actual value
-		if(secondDimension != null) {
-			returnVal = secondDimension.get(second);
-		}
-		
-		return returnVal;
+		return bigrams[getDecimalValue(first)][getDecimalValue(second)];
 	}
 	
 	/**
@@ -87,19 +89,9 @@ public class Bigram {
 	 * @param second the second word in the bigram
 	 * @param value the value to set the bigram to
 	 */
-	public void setValue(String first, String second, Double value) {
+	public void setValue(Character first, Character second, Double value) {
 		
-		// Try to get the second dimension
-		Hashtable<String, Double> secondDimension = bigrams.get(first);
-		
-		// If there was no existing second dimension, create it
-		if(secondDimension == null) {
-			secondDimension = new Hashtable<String, Double>();
-			bigrams.put(first, secondDimension);
-		}
-		
-		// Set the value of the second dimension
-		secondDimension.put(second, value);
+		bigrams[getDecimalValue(first)][getDecimalValue(second)] = value;
 	}
 	
 	/**
@@ -108,15 +100,17 @@ public class Bigram {
 	 * @param first the first word in the bigram
 	 * @param second the second word in the bigram
 	 */
-	private void incrementValue(String first, String second) {
+	private void incrementValue(Character first, Character second) {
 		
-		// Get the current value of the bigram
-		Double value = getValue(first, second);
-		
-		// Set the value of the bigram
-		if(value == null)
-			setValue(first, second, 1.0);
-		else
-			setValue(first, second, value + 1.0);
+		bigrams[getDecimalValue(first)][getDecimalValue(second)]++;
+	}
+	
+	/**
+	 * Converts a character to it's array index
+	 * @param character the character to convert
+	 * @return the associated array index
+	 */
+	private int getDecimalValue(char character) {
+		return Integer.valueOf(character) - 97;
 	}
 }

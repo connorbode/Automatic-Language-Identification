@@ -22,6 +22,9 @@ public class Bigram {
 	// The size of the character set
 	private final static int CHAR_SET_SIZE = 26;
 	
+	// The label for the set
+	private String label;
+	
 	
 	/* ===============================================
 		CONSTRUCTORS
@@ -34,8 +37,10 @@ public class Bigram {
 	 * @throws IOException
 	 * @throws CharacterSetException
 	 */
-	public Bigram(File file)
+	public Bigram(String label, File file)
 		throws FileNotFoundException, IOException, CharacterSetException {
+		
+		this.label = label;
 		
 		// Read the text from the file
 		String fileContents = FileOps.readTextFromFile(file);
@@ -71,7 +76,7 @@ public class Bigram {
 			for(int j = 0; j < bigrams[i].length; j++) {
 				double numerator = bigrams[i][j] + SMOOTHING;
 				double denominator = numBigrams + (SMOOTHING * CHAR_SET_SIZE * CHAR_SET_SIZE);
-				bigrams[i][j] = numerator / denominator;
+				bigrams[i][j] = Math.log10(numerator / denominator);
 			}
 		}
 	}
@@ -80,11 +85,11 @@ public class Bigram {
 	 * Constructor with file path parameter
 	 * @param filePath the path to the file
 	 */
-	public Bigram(String filePath)
+	public Bigram(String label, String filePath)
 		throws FileNotFoundException, IOException, CharacterSetException {
 		
 		// Call the other constructor with a new file
-		this(new File(filePath));
+		this(label, new File(filePath));
 	}
 	
 	
@@ -132,5 +137,36 @@ public class Bigram {
 	 */
 	private int getDecimalValue(char character) {
 		return Integer.valueOf(character) - 97;
+	}
+	
+	/**
+	 * Gets the label of the Bigram
+	 * @return the label of the Bigram
+	 */
+	public String getLabel() {
+		return label;
+	}
+	
+
+	/**
+	 * Evaluates the probability of the given String belonging to the language
+	 * @param s The supplied string
+	 * @return 
+	 * @throws CharacterSetException If the supplied string contains an invalid character
+	 */
+	public Double evaluate(String s) throws CharacterSetException {
+		ArrayList<Character> tokens = Tokenizer.tokenize(s);
+		
+		double probabilitySum = 0.0;
+		
+		for(int i = 0; i < tokens.size() - 1; i++) {
+			char token1 = tokens.get(i);
+			char token2 = tokens.get(i+1);
+			
+			if(token1 != ' ' && token2 != ' ')
+				probabilitySum += getValue(token1, token2);
+		}
+		
+		return probabilitySum;
 	}
 }

@@ -22,8 +22,8 @@ public class Bigram {
 	// The size of the character set
 	private final static int CHAR_SET_SIZE = 26;
 	
-	// The label for the set
-	private String label;
+	// The number of bigrams in the set
+	private int numBigrams = 0;
 	
 	
 	/* ===============================================
@@ -37,10 +37,36 @@ public class Bigram {
 	 * @throws IOException
 	 * @throws CharacterSetException
 	 */
-	public Bigram(String label, File file)
+	public Bigram(File file)
 		throws FileNotFoundException, IOException, CharacterSetException {
 		
-		this.label = label;
+		train(file);
+	}
+	
+	/**
+	 * Constructor with file path parameter
+	 * @param filePath the path to the file
+	 */
+	public Bigram(String filePath)
+		throws FileNotFoundException, IOException, CharacterSetException {
+		
+		// Call the other constructor with a new file
+		this(new File(filePath));
+	}
+	
+	
+	/* ===============================================
+		METHODS
+   	   =============================================== */
+	
+	/**
+	 * Trains the bigram
+	 * @param file the file to train from
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 * @throws CharacterSetException If there are unrecognized characters in the file
+	 */
+	public void train(File file) throws FileNotFoundException, IOException, CharacterSetException {
 		
 		// Read the text from the file
 		String fileContents = FileOps.readTextFromFile(file);
@@ -55,9 +81,6 @@ public class Bigram {
 			}
 		}
 		
-		// Record the number of bigrams
-		int numBigrams = 0;
-		
 		// Build the Bigram
 		for(int i = 0; i < tokens.size()-1; i++) {
 			
@@ -70,32 +93,8 @@ public class Bigram {
 				numBigrams++;
 			}
 		}
-		
-		// Iterate through all bigrams and modify them to be smoothed probabilities rather than frequencies
-		for(int i = 0; i < bigrams.length; i++) {
-			for(int j = 0; j < bigrams[i].length; j++) {
-				double numerator = bigrams[i][j] + SMOOTHING;
-				double denominator = numBigrams + (SMOOTHING * CHAR_SET_SIZE * CHAR_SET_SIZE);
-				bigrams[i][j] = Math.log10(numerator / denominator);
-			}
-		}
 	}
 	
-	/**
-	 * Constructor with file path parameter
-	 * @param filePath the path to the file
-	 */
-	public Bigram(String label, String filePath)
-		throws FileNotFoundException, IOException, CharacterSetException {
-		
-		// Call the other constructor with a new file
-		this(label, new File(filePath));
-	}
-	
-	
-	/* ===============================================
-		METHODS
-   	   =============================================== */
 	
 	/**
 	 * Retrieves the value of a given bigram
@@ -105,7 +104,8 @@ public class Bigram {
 	 */
 	public Double getValue(char first, char second) {
 		
-		return bigrams[getDecimalValue(first)][getDecimalValue(second)];
+		double frequency = bigrams[getDecimalValue(first)][getDecimalValue(second)];
+		return smooth(frequency);
 	}
 	
 	/**
@@ -139,14 +139,6 @@ public class Bigram {
 		return Integer.valueOf(character) - 97;
 	}
 	
-	/**
-	 * Gets the label of the Bigram
-	 * @return the label of the Bigram
-	 */
-	public String getLabel() {
-		return label;
-	}
-	
 
 	/**
 	 * Evaluates the probability of the given String belonging to the language
@@ -168,5 +160,18 @@ public class Bigram {
 		}
 		
 		return probabilitySum;	
+	}
+	
+	/**
+	 * Uses ADD-0.5 smoothing to prevent unseen probabilities from outputting zero & 
+	 * computes the base10 logarithm of the output to avoid underflow
+	 * @param val the value to smooth
+	 * @return the smoothed value
+	 */
+	public Double smooth(Double val) {
+		
+		double numerator = val + SMOOTHING;
+		double denominator = numBigrams + (SMOOTHING * CHAR_SET_SIZE * CHAR_SET_SIZE);
+		return Math.log10(numerator / denominator);
 	}
 }

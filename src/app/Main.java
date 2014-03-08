@@ -7,8 +7,8 @@ public class Main {
 	public static void main(String[] args) {
 		
 		try {
-			Bigram english = new Bigram("english", new File("files/english.txt"));
-			Bigram french = new Bigram("french", new File("files/french.txt"));
+			Bigram english = new Bigram(new File("files/english.txt"));
+			Bigram french = new Bigram(new File("files/french.txt"));
 			String test = "Le printemps se fait attendre.";
 			double probEnglish = english.evaluate(test);
 			double probFrench = french.evaluate(test);

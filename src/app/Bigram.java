@@ -16,6 +16,12 @@ public class Bigram {
 	// The bigram matrix
 	private Double[][] bigrams = new Double[26][26];
 	
+	// The smoothing level
+	private final static double SMOOTHING = 0.5;
+	
+	// The size of the character set
+	private final static int CHAR_SET_SIZE = 26;
+	
 	
 	/* ===============================================
 		CONSTRUCTORS
@@ -44,6 +50,9 @@ public class Bigram {
 			}
 		}
 		
+		// Record the number of bigrams
+		int numBigrams = 0;
+		
 		// Build the Bigram
 		for(int i = 0; i < tokens.size()-1; i++) {
 			
@@ -51,8 +60,19 @@ public class Bigram {
 			char token2 = tokens.get(i+1);
 			
 			// Increment the bigram matrix if neither token is a space
-			if(token1 != ' ' && token2 != ' ') 
+			if(token1 != ' ' && token2 != ' ') {
 				incrementValue(tokens.get(i), tokens.get(i+1));
+				numBigrams++;
+			}
+		}
+		
+		// Iterate through all bigrams and modify them to be smoothed probabilities rather than frequencies
+		for(int i = 0; i < bigrams.length; i++) {
+			for(int j = 0; j < bigrams[i].length; j++) {
+				double numerator = bigrams[i][j] + SMOOTHING;
+				double denominator = numBigrams + (SMOOTHING * CHAR_SET_SIZE * CHAR_SET_SIZE);
+				bigrams[i][j] = numerator / denominator;
+			}
 		}
 	}
 	

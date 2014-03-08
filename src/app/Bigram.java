@@ -167,6 +167,6 @@ public class Bigram {
 				probabilitySum += getValue(token1, token2);
 		}
 		
-		return probabilitySum;
+		return probabilitySum;	
 	}
 }

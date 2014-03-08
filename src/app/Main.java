@@ -7,8 +7,14 @@ public class Main {
 	public static void main(String[] args) {
 		
 		try {
-			Bigram bigram = new Bigram("english", new File("files/english.txt"));
-			System.out.println("test");
+			Bigram english = new Bigram("english", new File("files/english.txt"));
+			Bigram french = new Bigram("french", new File("files/french.txt"));
+			String test = "Le printemps se fait attendre.";
+			double probEnglish = english.evaluate(test);
+			double probFrench = french.evaluate(test);
+			System.out.println("Probability English: " + probEnglish);
+			System.out.println("Probability French: " + probFrench);
+			System.out.println("The text is " + (probEnglish > probFrench ? "english" : "french"));
 		}
 		
 		catch(Exception e) {

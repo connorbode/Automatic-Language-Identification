@@ -28,8 +28,7 @@ public abstract class Tokenizer {
 		METHODS
    	   =============================================== */
 
-	public static ArrayList<Character> tokenize(String string)
-		throws CharacterSetException {
+	public static ArrayList<Character> tokenize(String string) {
 		
 		// lowercase the string
 		string = string.toLowerCase();

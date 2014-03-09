@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Bigram {
+class Bigram {
 	
 	
 	/* ===============================================
@@ -37,8 +37,8 @@ public class Bigram {
 	 * @throws IOException
 	 * @throws CharacterSetException
 	 */
-	public Bigram(File file)
-		throws FileNotFoundException, IOException, CharacterSetException {
+	protected Bigram(File file)
+		throws FileNotFoundException, IOException {
 		
 		train(file);
 	}
@@ -47,8 +47,8 @@ public class Bigram {
 	 * Constructor with file path parameter
 	 * @param filePath the path to the file
 	 */
-	public Bigram(String filePath)
-		throws FileNotFoundException, IOException, CharacterSetException {
+	protected Bigram(String filePath)
+		throws FileNotFoundException, IOException {
 		
 		// Call the other constructor with a new file
 		this(new File(filePath));
@@ -66,7 +66,7 @@ public class Bigram {
 	 * @throws IOException
 	 * @throws CharacterSetException If there are unrecognized characters in the file
 	 */
-	public void train(File file) throws FileNotFoundException, IOException, CharacterSetException {
+	protected void train(File file) throws FileNotFoundException, IOException {
 		
 		// Read the text from the file
 		String fileContents = FileOps.readTextFromFile(file);
@@ -102,7 +102,7 @@ public class Bigram {
 	 * @param second the second character in the bigram
 	 * @return the probability of the bigram occurring
 	 */
-	public Double getValue(char first, char second) {
+	protected Double getValue(char first, char second) {
 		
 		double frequency = bigrams[getDecimalValue(first)][getDecimalValue(second)];
 		return smooth(frequency);
@@ -114,7 +114,7 @@ public class Bigram {
 	 * @param second the second word in the bigram
 	 * @param value the value to set the bigram to
 	 */
-	public void setValue(Character first, Character second, Double value) {
+	protected void setValue(Character first, Character second, Double value) {
 		
 		bigrams[getDecimalValue(first)][getDecimalValue(second)] = value;
 	}
@@ -146,7 +146,7 @@ public class Bigram {
 	 * @return 
 	 * @throws CharacterSetException If the supplied string contains an invalid character
 	 */
-	public Double evaluate(String s) throws CharacterSetException {
+	protected Double evaluate(String s) {
 		ArrayList<Character> tokens = Tokenizer.tokenize(s);
 		
 		double probabilitySum = 0.0;
@@ -168,7 +168,7 @@ public class Bigram {
 	 * @param val the value to smooth
 	 * @return the smoothed value
 	 */
-	public Double smooth(Double val) {
+	private Double smooth(Double val) {
 		
 		double numerator = val + SMOOTHING;
 		double denominator = numBigrams + (SMOOTHING * CHAR_SET_SIZE * CHAR_SET_SIZE);

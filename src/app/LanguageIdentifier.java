@@ -40,7 +40,7 @@ public class LanguageIdentifier {
 	 * @throws IOException if the file specified was inaccessible
 	 * @throws CharacterSetException if the file specified contained unrecognized characters
 	 */
-	public void train(String key, File file) throws FileNotFoundException, IOException, CharacterSetException {
+	public void train(String key, File file) throws FileNotFoundException, IOException {
 		
 		// If the bigram doesn't exist, create it
 		if(!bigrams.containsKey(key)) {
@@ -59,7 +59,7 @@ public class LanguageIdentifier {
 	 * @return the predicted language to which the string belongs
 	 * @throws CharacterSetException if there are unrecognized characters in the string
 	 */
-	public String evaluate(String s) throws CharacterSetException {
+	public String evaluate(String s) {
 		
 		// default text if there are no hashtable keys
 		String bestKey = "no language identifiers have been trained";
@@ -81,7 +81,7 @@ public class LanguageIdentifier {
 	 * Records a bigram hashtable key for later use
 	 * @param key the key to the bigram hashtable
 	 */
-	public void addKey(String key) {
+	private void addKey(String key) {
 		keys.add(key);
 	}
 }

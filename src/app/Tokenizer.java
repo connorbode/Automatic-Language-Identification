@@ -2,7 +2,7 @@ package app;
 
 import java.util.ArrayList;
 
-public abstract class Tokenizer {
+abstract class Tokenizer {
 	
 	/* ===============================================
 		CLASS VARIABLES

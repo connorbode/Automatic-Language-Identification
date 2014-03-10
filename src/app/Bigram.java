@@ -105,7 +105,7 @@ class Bigram {
 	protected Double getValue(char first, char second) {
 		
 		double frequency = bigrams[getDecimalValue(first)][getDecimalValue(second)];
-		return smooth(frequency);
+		return smooth(frequency, getDecimalValue(first));
 	}
 	
 	/**
@@ -163,7 +163,7 @@ class Bigram {
 				
 				probabilitySum += getValue(token1, token2);
 				System.out.println("BIGRAM: " + token1 + token2);
-				System.out.println("P(" + token1 + ", " + token2 + ") = " + probability(bigrams[token1D][token2D]));
+				System.out.println("P(" + token1 + ", " + token2 + ") = " + probability(bigrams[token1D][token2D], token1D));
 				System.out.println("log prob of sequence so far: " + probabilitySum);
 				System.out.println();
 			}
@@ -172,10 +172,15 @@ class Bigram {
 		return probabilitySum;	
 	}
 	
-	private Double probability(Double val) {
+	/**
+	 * Retrieves the probability of the of the bigram occurring
+	 * @param val the frequency of the bigram
+	 * @return
+	 */
+	private Double probability(Double val, int row) {
 
 		double numerator = val + SMOOTHING;
-		double denominator = numBigrams + (SMOOTHING * CHAR_SET_SIZE * CHAR_SET_SIZE);
+		double denominator = getTotal(row) + (SMOOTHING * CHAR_SET_SIZE * CHAR_SET_SIZE);
 		return numerator / denominator;
 	}
 	
@@ -185,8 +190,21 @@ class Bigram {
 	 * @param val the value to smooth
 	 * @return the smoothed value
 	 */
-	private Double smooth(Double val) {
+	private Double smooth(Double val, int row) {
 		
-		return Math.log10(probability(val));
+		return Math.log10(probability(val, row));
+	}
+	
+	/**
+	 * Gets the total frequency for a row of bigrams
+	 * @param row 
+	 */
+	private int getTotal(int row) {
+		
+		int count = 0;
+		for(int i = 0; i < bigrams[row].length; i++) {
+			count += bigrams[row][i];
+		}
+		return count;
 	}
 }

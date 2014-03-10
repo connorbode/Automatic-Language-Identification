@@ -1,0 +1,142 @@
+-------------------------------------
+Feed me text!!
+-------------------------------------
+i spilt mustard
+-------------------------------------
+EVALUATING INPUT AS ENGLISH
+-------------------------------------
+BIGRAM: sp
+P(s, p) = 0.00631768953068592
+log prob of sequence so far: -2.199441720378154
+
+BIGRAM: pi
+P(p, i) = 0.020481927710843374
+log prob of sequence so far: -3.8880708913759543
+
+BIGRAM: il
+P(i, l) = 0.028954802259887006
+log prob of sequence so far: -5.426350288009969
+
+BIGRAM: lt
+P(l, t) = 0.006704980842911878
+log prob of sequence so far: -7.599952746661955
+
+BIGRAM: mu
+P(m, u) = 0.005186721991701245
+log prob of sequence so far: -9.885059776228768
+
+BIGRAM: us
+P(u, s) = 0.028662420382165606
+log prob of sequence so far: -11.42774691486266
+
+BIGRAM: st
+P(s, t) = 0.08754512635379061
+log prob of sequence so far: -12.485514940988825
+
+BIGRAM: ta
+P(t, a) = 0.027426160337552744
+log prob of sequence so far: -14.047349930356074
+
+BIGRAM: ar
+P(a, r) = 0.04691516709511568
+log prob of sequence so far: -15.376036662889287
+
+BIGRAM: rd
+P(r, d) = 0.007401315789473684
+log prob of sequence so far: -17.50672772838668
+
+FINAL LOGARITHMIC SUM FOR ENGLISH: -17.50672772838668
+
+-------------------------------------
+EVALUATING INPUT AS FRENCH
+-------------------------------------
+BIGRAM: sp
+P(s, p) = 8.787346221441124E-4
+log prob of sequence so far: -3.0561422620590526
+
+BIGRAM: pi
+P(p, i) = 0.013238289205702648
+log prob of sequence so far: -4.934310397539166
+
+BIGRAM: il
+P(i, l) = 0.0625
+log prob of sequence so far: -6.138430380195091
+
+BIGRAM: lt
+P(l, t) = 9.45179584120983E-4
+log prob of sequence so far: -9.162916047894258
+
+BIGRAM: mu
+P(m, u) = 9.671179883945841E-4
+log prob of sequence so far: -12.177436586652181
+
+BIGRAM: us
+P(u, s) = 0.038211382113821135
+log prob of sequence so far: -13.595243840155861
+
+BIGRAM: st
+P(s, t) = 0.05711775043936731
+log prob of sequence so far: -14.838472745572059
+
+BIGRAM: ta
+P(t, a) = 0.03326996197718631
+log prob of sequence so far: -16.316420441039504
+
+BIGRAM: ar
+P(a, r) = 0.03840579710144928
+log prob of sequence so far: -17.732023657839953
+
+BIGRAM: rd
+P(r, d) = 0.01588628762541806
+log prob of sequence so far: -19.531001236539517
+
+FINAL LOGARITHMIC SUM FOR FRENCH: -19.531001236539517
+
+-------------------------------------
+EVALUATING INPUT AS GERMAN
+-------------------------------------
+BIGRAM: sp
+P(s, p) = 0.028634361233480177
+log prob of sequence so far: -1.543112500550267
+
+BIGRAM: pi
+P(p, i) = 0.025694444444444443
+log prob of sequence so far: -3.1332732685785216
+
+BIGRAM: il
+P(i, l) = 0.029633113828786452
+log prob of sequence so far: -4.6614959793122175
+
+BIGRAM: lt
+P(l, t) = 0.07541729893778452
+log prob of sequence so far: -5.784025005172895
+
+BIGRAM: mu
+P(m, u) = 0.032129277566539924
+log prob of sequence so far: -7.27712404471296
+
+BIGRAM: us
+P(u, s) = 0.07205438066465257
+log prob of sequence so far: -8.419463655112546
+
+BIGRAM: st
+P(s, t) = 0.2630419661488523
+log prob of sequence so far: -8.999438613037542
+
+BIGRAM: ta
+P(t, a) = 0.11950169178714241
+log prob of sequence so far: -9.922064559396736
+
+BIGRAM: ar
+P(a, r) = 0.11027976577748862
+log prob of sequence so far: -10.87956872435738
+
+BIGRAM: rd
+P(r, d) = 0.03656286043829297
+log prob of sequence so far: -12.31652855961584
+
+FINAL LOGARITHMIC SUM FOR GERMAN: -12.31652855961584
+
+-------------------------------------
+Mmmm.. That text was german
+-------------------------------------

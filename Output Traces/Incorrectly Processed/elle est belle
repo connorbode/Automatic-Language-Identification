@@ -1,0 +1,130 @@
+-------------------------------------
+Feed me text!!
+-------------------------------------
+elle est belle
+-------------------------------------
+EVALUATING INPUT AS ENGLISH
+-------------------------------------
+BIGRAM: el
+P(e, l) = 0.01901840490797546
+log prob of sequence so far: -1.720825910569685
+
+BIGRAM: ll
+P(l, l) = 0.04310344827586207
+log prob of sequence so far: -3.0863138954605844
+
+BIGRAM: le
+P(l, e) = 0.0871647509578544
+log prob of sequence so far: -4.145973001805734
+
+BIGRAM: es
+P(e, s) = 0.03987730061349693
+log prob of sequence so far: -5.545247249566836
+
+BIGRAM: st
+P(s, t) = 0.08754512635379061
+log prob of sequence so far: -6.603015275693003
+
+BIGRAM: be
+P(b, e) = 0.06370192307692307
+log prob of sequence so far: -7.798862732382938
+
+BIGRAM: el
+P(e, l) = 0.01901840490797546
+log prob of sequence so far: -9.519688642952623
+
+BIGRAM: ll
+P(l, l) = 0.04310344827586207
+log prob of sequence so far: -10.885176627843522
+
+BIGRAM: le
+P(l, e) = 0.0871647509578544
+log prob of sequence so far: -11.944835734188672
+
+FINAL LOGARITHMIC SUM FOR ENGLISH: -11.944835734188672
+
+-------------------------------------
+EVALUATING INPUT AS FRENCH
+-------------------------------------
+BIGRAM: el
+P(e, l) = 0.02474108170310702
+log prob of sequence so far: -1.6065813165330611
+
+BIGRAM: ll
+P(l, l) = 0.046313799621928164
+log prob of sequence so far: -2.9408709042037144
+
+BIGRAM: le
+P(l, e) = 0.16162570888468808
+log prob of sequence so far: -3.7323604615107273
+
+BIGRAM: es
+P(e, s) = 0.1478711162255466
+log prob of sequence so far: -4.562477110292081
+
+BIGRAM: st
+P(s, t) = 0.05711775043936731
+log prob of sequence so far: -5.805706015708278
+
+BIGRAM: be
+P(b, e) = 0.026923076923076925
+log prob of sequence so far: -7.375581323664839
+
+BIGRAM: el
+P(e, l) = 0.02474108170310702
+log prob of sequence so far: -8.9821626401979
+
+BIGRAM: ll
+P(l, l) = 0.046313799621928164
+log prob of sequence so far: -10.316452227868554
+
+BIGRAM: le
+P(l, e) = 0.16162570888468808
+log prob of sequence so far: -11.107941785175568
+
+FINAL LOGARITHMIC SUM FOR FRENCH: -11.107941785175568
+
+-------------------------------------
+EVALUATING INPUT AS GERMAN
+-------------------------------------
+BIGRAM: el
+P(e, l) = 0.03486628342914271
+log prob of sequence so far: -1.4575943437693808
+
+BIGRAM: ll
+P(l, l) = 0.1251896813353566
+log prob of sequence so far: -2.3600258098134654
+
+BIGRAM: le
+P(l, e) = 0.2080424886191199
+log prob of sequence so far: -3.0418737696179625
+
+BIGRAM: es
+P(e, s) = 0.0860201616262601
+log prob of sequence so far: -4.107273515388183
+
+BIGRAM: st
+P(s, t) = 0.2630419661488523
+log prob of sequence so far: -4.68724847331318
+
+BIGRAM: be
+P(b, e) = 0.4514218009478673
+log prob of sequence so far: -5.032665944263216
+
+BIGRAM: el
+P(e, l) = 0.03486628342914271
+log prob of sequence so far: -6.490260288032596
+
+BIGRAM: ll
+P(l, l) = 0.1251896813353566
+log prob of sequence so far: -7.392691754076681
+
+BIGRAM: le
+P(l, e) = 0.2080424886191199
+log prob of sequence so far: -8.074539713881178
+
+FINAL LOGARITHMIC SUM FOR GERMAN: -8.074539713881178
+
+-------------------------------------
+Mmmm.. That text was german
+-------------------------------------

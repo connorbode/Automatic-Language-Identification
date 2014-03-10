@@ -10,7 +10,7 @@ abstract class Tokenizer {
 
 	
 	private static String[] REMOVABLE = {
-		"-", "'", "\"", ":", ",", ".", "--", "!", "?"
+		"'", "\"", ":", ",", ".", "--", "!", "?"
 	};
 	
 	private static String[] SPACE_EQUIVALENT = {

@@ -152,14 +152,31 @@ class Bigram {
 		double probabilitySum = 0.0;
 		
 		for(int i = 0; i < tokens.size() - 1; i++) {
+			
 			char token1 = tokens.get(i);
 			char token2 = tokens.get(i+1);
+			int token1D = getDecimalValue(token1)
+				, token2D = getDecimalValue(token2);
 			
-			if(token1 != ' ' && token2 != ' ')
+			
+			if(token1 != ' ' && token2 != ' ') {
+				
 				probabilitySum += getValue(token1, token2);
+				System.out.println("BIGRAM: " + token1 + token2);
+				System.out.println("P(" + token1 + ", " + token2 + ") = " + probability(bigrams[token1D][token2D]));
+				System.out.println("log prob of sequence so far: " + probabilitySum);
+				System.out.println();
+			}
 		}
 		
 		return probabilitySum;	
+	}
+	
+	private Double probability(Double val) {
+
+		double numerator = val + SMOOTHING;
+		double denominator = numBigrams + (SMOOTHING * CHAR_SET_SIZE * CHAR_SET_SIZE);
+		return numerator / denominator;
 	}
 	
 	/**
@@ -170,8 +187,6 @@ class Bigram {
 	 */
 	private Double smooth(Double val) {
 		
-		double numerator = val + SMOOTHING;
-		double denominator = numBigrams + (SMOOTHING * CHAR_SET_SIZE * CHAR_SET_SIZE);
-		return Math.log10(numerator / denominator);
+		return Math.log10(probability(val));
 	}
 }

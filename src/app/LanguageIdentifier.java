@@ -67,7 +67,12 @@ public class LanguageIdentifier {
 		
 		// Iterate all hashtable keys to see which is the greatest
 		for(String key : keys) {
+			System.out.println("-------------------------------------");
+			System.out.println("EVALUATING INPUT AS " + key.toUpperCase());
+			System.out.println("-------------------------------------");
 			double value = bigrams.get(key).evaluate(s);
+			System.out.println("FINAL LOGARITHMIC SUM FOR " + key.toUpperCase() + ": " + value);
+			System.out.println();
 			if(Double.compare(value, bestValue) > 0) {
 				bestKey = key;
 				bestValue = value;

@@ -23,9 +23,14 @@ public class Main {
 		// PERFORM! (wait for input and decide what language it is)
 		try {
 			while(true) {
+				System.out.println("-------------------------------------");
 				System.out.println("Feed me text!!");
+				System.out.println("-------------------------------------");
 				String input = in.nextLine();
-				System.out.println("Mmmm.. That text was " + li.evaluate(input));
+				String output = li.evaluate(input);
+				System.out.println("-------------------------------------");
+				System.out.println("Mmmm.. That text was " + output);
+				System.out.println("-------------------------------------");
 			}
 		}
 		

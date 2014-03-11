@@ -97,18 +97,6 @@ class Bigram {
 	
 	
 	/**
-	 * Retrieves the value of a given bigram
-	 * @param first the first character in the bigram
-	 * @param second the second character in the bigram
-	 * @return the probability of the bigram occurring
-	 */
-	protected Double getValue(char first, char second) {
-		
-		double frequency = bigrams[getDecimalValue(first)][getDecimalValue(second)];
-		return smooth(frequency, getDecimalValue(first));
-	}
-	
-	/**
 	 * Sets the value of the bigram
 	 * @param first the first word in the bigram
 	 * @param second the second word in the bigram
@@ -139,59 +127,17 @@ class Bigram {
 		return Integer.valueOf(character) - 97;
 	}
 	
-
-	/**
-	 * Evaluates the probability of the given String belonging to the language
-	 * @param s The supplied string
-	 * @return 
-	 * @throws CharacterSetException If the supplied string contains an invalid character
-	 */
-	protected Double evaluate(String s) {
-		ArrayList<Character> tokens = Tokenizer.tokenize(s);
-		
-		double probabilitySum = 0.0;
-		
-		for(int i = 0; i < tokens.size() - 1; i++) {
-			
-			char token1 = tokens.get(i);
-			char token2 = tokens.get(i+1);
-			int token1D = getDecimalValue(token1)
-				, token2D = getDecimalValue(token2);
-			
-			
-			if(token1 != ' ' && token2 != ' ') {
-				
-				probabilitySum += getValue(token1, token2);
-				System.out.println("BIGRAM: " + token1 + token2);
-				System.out.println("P(" + token1 + ", " + token2 + ") = " + probability(bigrams[token1D][token2D], token1D));
-				System.out.println("log prob of sequence so far: " + probabilitySum);
-				System.out.println();
-			}
-		}
-		
-		return probabilitySum;	
-	}
-	
 	/**
 	 * Retrieves the probability of the of the bigram occurring
 	 * @param val the frequency of the bigram
 	 * @return
 	 */
-	private Double probability(Double val, int row) {
-
+	protected Double probability(char char1, char char2) {
+		int row = getDecimalValue(char1);
+		int col = getDecimalValue(char2);
+		double val = bigrams[row][col];
 		double numerator = val + SMOOTHING;
 		double denominator = bigramTotals[row] + (SMOOTHING * CHAR_SET_SIZE * CHAR_SET_SIZE);
 		return numerator / denominator;
-	}
-	
-	/**
-	 * Uses ADD-0.5 smoothing to prevent unseen probabilities from outputting zero & 
-	 * computes the base10 logarithm of the output to avoid underflow
-	 * @param val the value to smooth
-	 * @return the smoothed value
-	 */
-	private Double smooth(Double val, int row) {
-		
-		return Math.log10(probability(val, row));
 	}
 }

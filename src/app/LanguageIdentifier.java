@@ -61,25 +61,49 @@ public class LanguageIdentifier {
 	 */
 	public String evaluate(String s) {
 		
-		// default text if there are no hashtable keys
-		String bestKey = "no language identifiers have been trained";
-		double bestValue = -Double.MAX_VALUE;
+		// create total holders for each language
+		double totals[] = new double[keys.size()];
+		Bigram bigrams[] = new Bigram[keys.size()];
+		for(int i = 0; i < keys.size(); i++) {
+			totals[i] = 0;
+			bigrams[i] = this.bigrams.get(keys.get(i));
+		}
 		
-		// Iterate all hashtable keys to see which is the greatest
-		for(String key : keys) {
-			System.out.println("-------------------------------------");
-			System.out.println("EVALUATING INPUT AS " + key.toUpperCase());
-			System.out.println("-------------------------------------");
-			double value = bigrams.get(key).evaluate(s);
-			System.out.println("FINAL LOGARITHMIC SUM FOR " + key.toUpperCase() + ": " + value);
-			System.out.println();
-			if(Double.compare(value, bestValue) > 0) {
-				bestKey = key;
-				bestValue = value;
+		// tokenize the string
+		ArrayList<Character> tokens = Tokenizer.tokenize(s);
+		
+		// iterate through the tokens
+		for(int i = 0; i < tokens.size() - 1; i++) {
+			
+			char char1 = tokens.get(i);
+			char char2 = tokens.get(i+1);
+			
+			if(char1 != ' ' && char2 != ' ') {
+			
+				System.out.println("BIGRAM: " + char1 + char2);
+				
+				// parse the bigram using each langauge
+				for(int j = 0; j < bigrams.length; j++) {
+					double prob = bigrams[j].probability(char1,  char2);
+					totals[j] += Math.log10(prob);
+					System.out.println(keys.get(j).toUpperCase() + ": P(" + char1 + "," + char2 + ") = " + prob + " ==> log prob of sequence so far: " + totals[j]);
+				}
+				
+				System.out.println();
 			}
 		}
 		
-		return bestKey;
+		// choose the outcome
+		double max = -Double.MAX_VALUE;
+		int maxIndex = -1;
+		for(int i = 0; i < totals.length; i++) {
+			if(totals[i] > max) {
+				max = totals[i];
+				maxIndex = i;
+			}
+		}
+		
+		return keys.get(maxIndex);
 	}
 	
 	/**

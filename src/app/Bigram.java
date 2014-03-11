@@ -13,17 +13,17 @@ class Bigram {
 		VARIABLES
    	   =============================================== */
 	
+	// The size of the character set
+	private final static int CHAR_SET_SIZE = Tokenizer.ACCEPTABLE_CHARS.length;
+	
 	// The bigram matrix
-	private Double[][] bigrams = new Double[26][26];
+	private Double[][] bigrams = new Double[CHAR_SET_SIZE][CHAR_SET_SIZE];
+	
+	// Totals for each row of bigrams (e.g. number of bigrams starting with character "s")
+	private int[] bigramTotals = new int[CHAR_SET_SIZE];
 	
 	// The smoothing level
 	private final static double SMOOTHING = 0.5;
-	
-	// The size of the character set
-	private final static int CHAR_SET_SIZE = 26;
-	
-	// The number of bigrams in the set
-	private int numBigrams = 0;
 	
 	
 	/* ===============================================
@@ -90,7 +90,7 @@ class Bigram {
 			// Increment the bigram matrix if neither token is a space
 			if(token1 != ' ' && token2 != ' ') {
 				incrementValue(tokens.get(i), tokens.get(i+1));
-				numBigrams++;
+				bigramTotals[getDecimalValue(token1)]++;
 			}
 		}
 	}
@@ -180,7 +180,7 @@ class Bigram {
 	private Double probability(Double val, int row) {
 
 		double numerator = val + SMOOTHING;
-		double denominator = getTotal(row) + (SMOOTHING * CHAR_SET_SIZE * CHAR_SET_SIZE);
+		double denominator = bigramTotals[row] + (SMOOTHING * CHAR_SET_SIZE * CHAR_SET_SIZE);
 		return numerator / denominator;
 	}
 	
@@ -193,18 +193,5 @@ class Bigram {
 	private Double smooth(Double val, int row) {
 		
 		return Math.log10(probability(val, row));
-	}
-	
-	/**
-	 * Gets the total frequency for a row of bigrams
-	 * @param row 
-	 */
-	private int getTotal(int row) {
-		
-		int count = 0;
-		for(int i = 0; i < bigrams[row].length; i++) {
-			count += bigrams[row][i];
-		}
-		return count;
 	}
 }

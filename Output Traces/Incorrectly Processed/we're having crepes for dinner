@@ -3,248 +3,101 @@ Feed me text!!
 -------------------------------------
 we're having crepes for dinner
 -------------------------------------
-EVALUATING INPUT AS ENGLISH
--------------------------------------
 BIGRAM: we
-P(w, e) = 0.02830188679245283
-log prob of sequence so far: -1.5481846105451078
+ENGLISH: P(w,e) = 0.026812313803376366 ==> log prob of sequence so far: -1.5716657063946307
+FRENCH: P(w,e) = 0.0068212824010914054 ==> log prob of sequence so far: -2.166133970305109
+GERMAN: P(w,e) = 0.04461371055495103 ==> log prob of sequence so far: -1.3505316546663757
 
 BIGRAM: re
-P(r, e) = 0.12746710526315788
-log prob of sequence so far: -2.4427864873115324
+ENGLISH: P(r,e) = 0.12214342001576044 ==> log prob of sequence so far: -2.484795630319044
+FRENCH: P(r,e) = 0.14491593274619696 ==> log prob of sequence so far: -3.00501783381006
+GERMAN: P(r,e) = 0.05560458958517211 ==> log prob of sequence so far: -2.605421015076191
 
 BIGRAM: ha
-P(h, a) = 0.11491628614916286
-log prob of sequence so far: -3.382404905242125
+ENGLISH: P(h,a) = 0.11046086320409657 ==> log prob of sequence so far: -3.441587197593697
+FRENCH: P(h,a) = 0.04049079754601227 ==> log prob of sequence so far: -4.3976615026721495
+GERMAN: P(h,a) = 0.09347996857816182 ==> log prob of sequence so far: -3.634702457337316
 
 BIGRAM: av
-P(a, v) = 0.02377892030848329
-log prob of sequence so far: -5.0062127738288
+ENGLISH: P(a,v) = 0.022995649471721565 ==> log prob of sequence so far: -5.079941517625731
+FRENCH: P(a,v) = 0.03977669225401256 ==> log prob of sequence so far: -5.7980328373970025
+GERMAN: P(a,v) = 6.653359946773121E-4 ==> log prob of sequence so far: -6.811661437924224
 
 BIGRAM: vi
-P(v, i) = 0.0037313432835820895
-log prob of sequence so far: -7.434347567857589
+ENGLISH: P(v,i) = 0.003500583430571762 ==> log prob of sequence so far: -7.535801084829267
+FRENCH: P(v,i) = 0.02383654937570942 ==> log prob of sequence so far: -7.420789451075131
+GERMAN: P(v,i) = 0.013530135301353014 ==> log prob of sequence so far: -8.680359298360067
 
 BIGRAM: in
-P(i, n) = 0.1419491525423729
-log prob of sequence so far: -8.28221476379085
+ENGLISH: P(i,n) = 0.13682777399591559 ==> log prob of sequence so far: -8.399626823199036
+FRENCH: P(i,n) = 0.07147912243453644 ==> log prob of sequence so far: -8.566610239141047
+GERMAN: P(i,n) = 0.15283342873497424 ==> log prob of sequence so far: -9.496140941978423
 
 BIGRAM: ng
-P(n, g) = 0.09587955625990491
-log prob of sequence so far: -9.300488748382516
+ENGLISH: P(n,g) = 0.09201520912547528 ==> log prob of sequence so far: -9.435767205708363
+FRENCH: P(n,g) = 0.006993006993006993 ==> log prob of sequence so far: -10.72194627660611
+GERMAN: P(n,g) = 0.07109004739336493 ==> log prob of sequence so far: -10.644332138220435
 
 BIGRAM: cr
-P(c, r) = 0.007658643326039387
-log prob of sequence so far: -11.416336904102092
+ENGLISH: P(c,r) = 0.007238883143743537 ==> log prob of sequence so far: -11.576095639777108
+FRENCH: P(c,r) = 0.007164790174002047 ==> log prob of sequence so far: -12.866742800310625
+GERMAN: P(c,r) = 7.880220646178094E-4 ==> log prob of sequence so far: -13.74779376031514
 
 BIGRAM: re
-P(r, e) = 0.12746710526315788
-log prob of sequence so far: -12.310938780868517
+ENGLISH: P(r,e) = 0.12214342001576044 ==> log prob of sequence so far: -12.489225563701522
+FRENCH: P(r,e) = 0.14491593274619696 ==> log prob of sequence so far: -13.705626663815575
+GERMAN: P(r,e) = 0.05560458958517211 ==> log prob of sequence so far: -15.002683120724956
 
 BIGRAM: ep
-P(e, p) = 0.030061349693251534
-log prob of sequence so far: -13.832930305243961
+ENGLISH: P(e,p) = 0.029114676173499703 ==> log prob of sequence so far: -14.025113599648833
+FRENCH: P(e,p) = 0.01507537688442211 ==> log prob of sequence so far: -15.52735848550562
+GERMAN: P(e,p) = 0.001348314606741573 ==> log prob of sequence so far: -17.872891881322246
 
 BIGRAM: pe
-P(p, e) = 0.03253012048192771
-log prob of sequence so far: -15.320644633461047
+ENGLISH: P(p,e) = 0.030577576443941108 ==> log prob of sequence so far: -15.539710539067414
+FRENCH: P(p,e) = 0.1111111111111111 ==> log prob of sequence so far: -16.481600994944944
+GERMAN: P(p,e) = 0.0038314176245210726 ==> log prob of sequence so far: -20.289532388660525
 
 BIGRAM: es
-P(e, s) = 0.03987730061349693
-log prob of sequence so far: -16.71991888122215
+ENGLISH: P(e,s) = 0.038621509209744505 ==> log prob of sequence so far: -16.95288129840038
+FRENCH: P(e,s) = 0.14349525404801786 ==> log prob of sequence so far: -17.32476345746268
+GERMAN: P(e,s) = 0.07056179775280899 ==> log prob of sequence so far: -21.440962751568243
 
 BIGRAM: fo
-P(f, o) = 0.028967254408060455
-log prob of sequence so far: -18.258011547631654
+ENGLISH: P(f,o) = 0.02715466351829988 ==> log prob of sequence so far: -18.519036872713496
+FRENCH: P(f,o) = 0.015384615384615385 ==> log prob of sequence so far: -19.137676814105536
+GERMAN: P(f,o) = 0.0035169988276670576 ==> log prob of sequence so far: -23.894790528016102
 
 BIGRAM: or
-P(o, r) = 0.06378299120234604
-log prob of sequence so far: -19.453306665333496
+ENGLISH: P(o,r) = 0.061397318278052226 ==> log prob of sequence so far: -19.73088747034234
+FRENCH: P(o,r) = 0.044194756554307116 ==> log prob of sequence so far: -20.492306068163984
+GERMAN: P(o,r) = 0.04100946372239748 ==> log prob of sequence so far: -25.281906437927017
 
 BIGRAM: di
-P(d, i) = 0.03467561521252797
-log prob of sequence so far: -20.913282490295142
+ENGLISH: P(d,i) = 0.03273495248152059 ==> log prob of sequence so far: -21.21587575551134
+FRENCH: P(d,i) = 0.024657534246575342 ==> log prob of sequence so far: -22.100356423181132
+GERMAN: P(d,i) = 0.07720254314259764 ==> log prob of sequence so far: -26.394274831184475
 
 BIGRAM: in
-P(i, n) = 0.1419491525423729
-log prob of sequence so far: -21.761149686228404
+ENGLISH: P(i,n) = 0.13682777399591559 ==> log prob of sequence so far: -22.07970149388111
+FRENCH: P(i,n) = 0.07147912243453644 ==> log prob of sequence so far: -23.246177211247048
+GERMAN: P(i,n) = 0.15283342873497424 ==> log prob of sequence so far: -27.21005647480283
 
 BIGRAM: nn
-P(n, n) = 7.92393026941363E-4
-log prob of sequence so far: -24.86220904113652
+ENGLISH: P(n,n) = 7.604562737642585E-4 ==> log prob of sequence so far: -25.198627246706888
+FRENCH: P(n,n) = 0.041181041181041184 ==> log prob of sequence so far: -24.631479888550647
+GERMAN: P(n,n) = 0.03859174001354096 ==> log prob of sequence so far: -28.623562114442286
 
 BIGRAM: ne
-P(n, e) = 0.06259904912836767
-log prob of sequence so far: -26.065641304754195
+ENGLISH: P(n,e) = 0.06007604562737642 ==> log prob of sequence so far: -26.419925908242224
+FRENCH: P(n,e) = 0.09246309246309246 ==> log prob of sequence so far: -25.6655114740625
+GERMAN: P(n,e) = 0.13337846987136087 ==> log prob of sequence so far: -29.498476383592642
 
 BIGRAM: er
-P(e, r) = 0.12822085889570553
-log prob of sequence so far: -26.9576826230471
-
-FINAL LOGARITHMIC SUM FOR ENGLISH: -26.9576826230471
-
--------------------------------------
-EVALUATING INPUT AS FRENCH
--------------------------------------
-BIGRAM: we
-P(w, e) = 0.007352941176470588
-log prob of sequence so far: -2.1335389083702174
-
-BIGRAM: re
-P(r, e) = 0.15133779264214048
-log prob of sequence so far: -2.953591513153425
-
-BIGRAM: ha
-P(h, a) = 0.04330708661417323
-log prob of sequence so far: -4.317032544615138
-
-BIGRAM: av
-P(a, v) = 0.041304347826086954
-log prob of sequence so far: -5.7010367753438835
-
-BIGRAM: vi
-P(v, i) = 0.025362318840579712
-log prob of sequence so far: -7.296847817394845
-
-BIGRAM: in
-P(i, n) = 0.07426470588235294
-log prob of sequence so far: -8.42606535198242
-
-BIGRAM: ng
-P(n, g) = 0.007293354943273906
-log prob of sequence so far: -10.563138002240319
-
-BIGRAM: cr
-P(c, r) = 0.007575757575757576
-log prob of sequence so far: -12.683711933446169
-
-BIGRAM: re
-P(r, e) = 0.15133779264214048
-log prob of sequence so far: -13.503764538229376
-
-BIGRAM: ep
-P(e, p) = 0.015535097813578827
-log prob of sequence so far: -15.312450546183037
-
-BIGRAM: pe
-P(p, e) = 0.11710794297352342
-log prob of sequence so far: -16.243864193616375
-
-BIGRAM: es
-P(e, s) = 0.1478711162255466
-log prob of sequence so far: -17.073980842397727
-
-BIGRAM: fo
-P(f, o) = 0.016414141414141416
-log prob of sequence so far: -18.858762671680385
-
-BIGRAM: or
-P(o, r) = 0.046021840873634944
-log prob of sequence so far: -20.19579868522104
-
-BIGRAM: di
-P(d, i) = 0.025911708253358926
-log prob of sequence so far: -21.782302640025556
-
-BIGRAM: in
-P(i, n) = 0.07426470588235294
-log prob of sequence so far: -22.91152017461313
-
-BIGRAM: nn
-P(n, n) = 0.04294975688816856
-log prob of sequence so far: -24.278559464709563
-
-BIGRAM: ne
-P(n, e) = 0.09643435980551053
-log prob of sequence so far: -25.294327663014254
-
-BIGRAM: er
-P(e, r) = 0.09148446490218642
-log prob of sequence so far: -26.33298031080645
-
-FINAL LOGARITHMIC SUM FOR FRENCH: -26.33298031080645
+ENGLISH: P(e,r) = 0.12418300653594772 ==> log prob of sequence so far: -27.325863738106992
+FRENCH: P(e,r) = 0.08877721943048576 ==> log prob of sequence so far: -26.717209935591082
+GERMAN: P(e,r) = 0.1451685393258427 ==> log prob of sequence so far: -30.33660387657849
 
 -------------------------------------
-EVALUATING INPUT AS GERMAN
--------------------------------------
-BIGRAM: we
-P(w, e) = 0.2464964964964965
-log prob of sequence so far: -0.608189249056333
-
-BIGRAM: re
-P(r, e) = 0.15559400230680506
-log prob of sequence so far: -1.416196396860639
-
-BIGRAM: ha
-P(h, a) = 0.10668611173435046
-log prob of sequence so far: -2.388088509673383
-
-BIGRAM: av
-P(a, v) = 0.008132726089785295
-log prob of sequence so far: -4.477852364165072
-
-BIGRAM: vi
-P(v, i) = 0.016976998904709748
-log prob of sequence so far: -6.247991443529079
-
-BIGRAM: in
-P(i, n) = 0.244523585539578
-log prob of sequence so far: -6.859670688144378
-
-BIGRAM: ng
-P(n, g) = 0.0726977455101261
-log prob of sequence so far: -7.998149745341649
-
-BIGRAM: cr
-P(c, r) = 1.3044612575006522E-4
-log prob of sequence so far: -11.882718560259981
-
-BIGRAM: re
-P(r, e) = 0.15559400230680506
-log prob of sequence so far: -12.690725708064287
-
-BIGRAM: ep
-P(e, p) = 8.747813046738316E-4
-log prob of sequence so far: -15.748826215093008
-
-BIGRAM: pe
-P(p, e) = 0.06319444444444444
-log prob of sequence so far: -16.948147314867164
-
-BIGRAM: es
-P(e, s) = 0.0860201616262601
-log prob of sequence so far: -18.013547060637386
-
-BIGRAM: fo
-P(f, o) = 0.05474452554744526
-log prob of sequence so far: -19.27520636440209
-
-BIGRAM: or
-P(o, r) = 0.14194615021256496
-log prob of sequence so far: -20.123082746082744
-
-BIGRAM: di
-P(d, i) = 0.17385057471264367
-log prob of sequence so far: -20.882906615376857
-
-BIGRAM: in
-P(i, n) = 0.244523585539578
-log prob of sequence so far: -21.494585859992156
-
-BIGRAM: nn
-P(n, n) = 0.08244172716851357
-log prob of sequence so far: -22.57843877824479
-
-BIGRAM: ne
-P(n, e) = 0.18293847917462744
-log prob of sequence so far: -23.316133713907995
-
-BIGRAM: er
-P(e, r) = 0.24864617179038573
-log prob of sequence so far: -23.92055193677896
-
-FINAL LOGARITHMIC SUM FOR GERMAN: -23.92055193677896
-
--------------------------------------
-Mmmm.. That text was german
+Mmmm.. That text was french
 -------------------------------------

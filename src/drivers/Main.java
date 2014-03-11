@@ -27,6 +27,7 @@ public class Main {
 				System.out.println("Feed me text!!");
 				System.out.println("-------------------------------------");
 				String input = in.nextLine();
+				System.out.println("-------------------------------------");
 				String output = li.evaluate(input);
 				System.out.println("-------------------------------------");
 				System.out.println("Mmmm.. That text was " + output);

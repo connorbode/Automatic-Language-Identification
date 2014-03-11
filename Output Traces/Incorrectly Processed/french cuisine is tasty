@@ -1,0 +1,88 @@
+-------------------------------------
+Feed me text!!
+-------------------------------------
+french cuisine is tasty
+-------------------------------------
+BIGRAM: fr
+ENGLISH: P(f,r) = 0.043683589138134596 ==> log prob of sequence so far: -1.3596816862637118
+FRENCH: P(f,r) = 0.01301775147928994 ==> log prob of sequence so far: -1.8854640237914673
+GERMAN: P(f,r) = 0.017584994138335287 ==> log prob of sequence so far: -1.7548577721118417
+
+BIGRAM: re
+ENGLISH: P(r,e) = 0.12214342001576044 ==> log prob of sequence so far: -2.272811610188125
+FRENCH: P(r,e) = 0.14491593274619696 ==> log prob of sequence so far: -2.7243478872964184
+GERMAN: P(r,e) = 0.05560458958517211 ==> log prob of sequence so far: -3.009747132521657
+
+BIGRAM: en
+ENGLISH: P(e,n) = 0.0754604872251931 ==> log prob of sequence so far: -3.395092005207992
+FRENCH: P(e,n) = 0.08877721943048576 ==> log prob of sequence so far: -3.7760463488249982
+GERMAN: P(e,n) = 0.17662921348314606 ==> log prob of sequence so far: -3.762684597463181
+
+BIGRAM: nc
+ENGLISH: P(n,c) = 0.028136882129277566 ==> log prob of sequence so far: -4.945816033966773
+FRENCH: P(n,c) = 0.030303030303030304 ==> log prob of sequence so far: -5.294560288702886
+GERMAN: P(n,c) = 0.007447528774542992 ==> log prob of sequence so far: -5.890672407616906
+
+BIGRAM: ch
+ENGLISH: P(c,h) = 0.04239917269906929 ==> log prob of sequence so far: -6.318458651330039
+FRENCH: P(c,h) = 0.033776867963152504 ==> log prob of sequence so far: -6.765940912543772
+GERMAN: P(c,h) = 0.41843971631205673 ==> log prob of sequence so far: -6.269039508630142
+
+BIGRAM: cu
+ENGLISH: P(c,u) = 0.005170630816959669 ==> log prob of sequence so far: -8.604915121077022
+FRENCH: P(c,u) = 0.017400204708290685 ==> log prob of sequence so far: -8.525386554884271
+GERMAN: P(c,u) = 7.880220646178094E-4 ==> log prob of sequence so far: -9.372501130724846
+
+BIGRAM: ui
+ENGLISH: P(u,i) = 0.003015075376884422 ==> log prob of sequence so far: -11.125616947103085
+FRENCH: P(u,i) = 0.03351519875292284 ==> log prob of sequence so far: -10.000144755679614
+GERMAN: P(u,i) = 8.795074758135445E-4 ==> log prob of sequence so far: -12.42826159541258
+
+BIGRAM: is
+ENGLISH: P(i,s) = 0.07828454731109598 ==> log prob of sequence so far: -12.23194090253973
+FRENCH: P(i,s) = 0.09978768577494693 ==> log prob of sequence so far: -11.001067804872793
+GERMAN: P(i,s) = 0.03033772180881511 ==> log prob of sequence so far: -13.946278630794723
+
+BIGRAM: si
+ENGLISH: P(s,i) = 0.03359173126614987 ==> log prob of sequence so far: -13.705708515251805
+FRENCH: P(s,i) = 0.08648194794290512 ==> log prob of sequence so far: -12.064142341650399
+GERMAN: P(s,i) = 0.0310841546626232 ==> log prob of sequence so far: -15.453739569621352
+
+BIGRAM: in
+ENGLISH: P(i,n) = 0.13682777399591559 ==> log prob of sequence so far: -14.569534253621573
+FRENCH: P(i,n) = 0.07147912243453644 ==> log prob of sequence so far: -13.209963129716314
+GERMAN: P(i,n) = 0.15283342873497424 ==> log prob of sequence so far: -16.269521213239706
+
+BIGRAM: ne
+ENGLISH: P(n,e) = 0.06007604562737642 ==> log prob of sequence so far: -15.790832915156908
+FRENCH: P(n,e) = 0.09246309246309246 ==> log prob of sequence so far: -14.24399471522817
+GERMAN: P(n,e) = 0.13337846987136087 ==> log prob of sequence so far: -17.14443548239006
+
+BIGRAM: is
+ENGLISH: P(i,s) = 0.07828454731109598 ==> log prob of sequence so far: -16.89715687059355
+FRENCH: P(i,s) = 0.09978768577494693 ==> log prob of sequence so far: -15.244917764421348
+GERMAN: P(i,s) = 0.03033772180881511 ==> log prob of sequence so far: -18.662452517772202
+
+BIGRAM: ta
+ENGLISH: P(t,a) = 0.026440677966101694 ==> log prob of sequence so far: -18.474884283881234
+FRENCH: P(t,a) = 0.03167420814479638 ==> log prob of sequence so far: -16.7442119980922
+GERMAN: P(t,a) = 0.018600531443755536 ==> log prob of sequence so far: -20.39292716496325
+
+BIGRAM: as
+ENGLISH: P(a,s) = 0.06401491609695463 ==> log prob of sequence so far: -19.668603103275093
+FRENCH: P(a,s) = 0.023028611304954642 ==> log prob of sequence so far: -18.381944248611656
+GERMAN: P(a,s) = 0.059214903526280775 ==> log prob of sequence so far: -21.620496138905246
+
+BIGRAM: st
+ENGLISH: P(s,t) = 0.08354866494401378 ==> log prob of sequence so far: -20.74666358874742
+FRENCH: P(s,t) = 0.054575986565911 ==> log prob of sequence so far: -19.64494265345158
+GERMAN: P(s,t) = 0.10083396512509477 ==> log prob of sequence so far: -22.616889293484526
+
+BIGRAM: ty
+ENGLISH: P(t,y) = 6.779661016949153E-4 ==> log prob of sequence so far: -23.915455609061603
+FRENCH: P(t,y) = 0.0027149321266968325 ==> log prob of sequence so far: -22.211183676753045
+GERMAN: P(t,y) = 8.857395925597874E-4 ==> log prob of sequence so far: -25.669583235409494
+
+-------------------------------------
+Mmmm.. That text was french
+-------------------------------------
